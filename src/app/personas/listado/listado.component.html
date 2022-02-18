@@ -1,0 +1,15 @@
+<h1>Listado de personas</h1>
+
+<button class="btn btn-danger" (click)="eliminarNombre()">Eliminar nombre</button>
+
+<h3 *ngIf="personaEliminada.length > 0; else noBorrado">Persona eliminada: {{personaEliminada}}</h3>
+
+<ng-template #noBorrado>
+    <h3>NO SE BORRÓ NADA</h3>
+</ng-template>
+
+<ul class="mt-5">
+    <li *ngFor="let persona of personas; let i = index">
+        {{i}} - {{persona}}
+    </li>
+</ul>
